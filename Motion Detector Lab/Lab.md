@@ -28,7 +28,6 @@ In this section you will wire up your board and write a simple Hello World appli
 
 For this lab we will be using a Particle Photon development board. Here are a few notes about it.
 
-- cdfnjk
 - For this lab, we will be referring to the top as the side with the USB port on it.
 - A cheap kit on their website is $29: <https://store.particle.io/collections/wifi/products/photon-kit>
 
@@ -40,7 +39,8 @@ If you've never worked with a breadboard before, here are a few notes. Otherwise
 - The lines on the left and right sides are all connected in parallel
 - The lines in the middle are connected horizontally, with a gap in the middle
 - When plugging wires into the board we'll be taking note of their color. But the color does not have any meaning other than what we choose to give it. It's just metal on the inside.
-TODO: Put an image here of a breadboard internal lines
+
+![Diagram of connected lines in a breadboard](/Images/Breadboard_lines.png "Diagram of connected lines in a breadboard")
 
 #### Wiring your board
 
@@ -51,17 +51,27 @@ TODO: Put an image here of a breadboard internal lines
 1) Plug the USB cable into the Photon board and into your computer.
 
 When done your setup should look like this:
-TODO: Place an image here
+![Wired board for Blinky app](/Images/blinky_wired_board.jpg "Wired board for Blinky app")
 
 You have just setup a breadboard to blink and LED. In the next section you will write the code to enable this functionality.
+
+### Claim the Particle Photon board as yours
+
+1) Make sure the Photon is connected to your computer.
+1) On your mobile device, open the Particle app.
+1) Click the Plus icon in the bottom right, then select the option to add a Photon.
+1) On the Photon board, hold down the `Reset` button for 3 seconds and then release it. The built in LED should blink blue.
+1) Click `Ready` in the Particle app to search for your Photon.
+1) When your Photon is found select it. You will get a popup asking to change the owner. Select the `Change Owner` option.
+1) On the next screen, enter the Wi-Fi credentials to connect the Photon to the network.
+
+- Note: If you get an error saying the board could not connect to the network, it may have still worked. Move on to the next step. If the board does not show up in your list of devices come back to this step and run through it again.
 
 ### Connect to the Particle Web IDE
 
 1) Using a web browser, navigate to <https://build.particle.io/build> and login.
 1) If you have not already created a Particle account, create one now. Sorry, but it's required to use the Web IDE.
-1) Spend a second familiarizing yourself with the UI.
-TODO: Add instructions for this?
-TODO: Add instructions for claiming the Photon and connecting to it
+1) Spend a few seconds familiarizing yourself with the UI.
 
 ### Write and Deploy your Code
 
@@ -111,6 +121,7 @@ A blinking LED is cool, but it's not useful. The next few steps will have you at
 1) Take a black wire and plug it into the left pin of the sensor. Then plug the other end into the breadboard on the far-right side (it was wired up to be ground earlier).
 1) Take the data wire (the one that isn't red) and plug it into the center pin in the sensor. Plug the other end into line 17 of the breadboard (so it is connected to Pin D4 on the Photon).
 1) Take the red wire and plug it into the right side pin of the sensor and plug the other end into line 10 of the breadboard (so it is connected to the 3V pin on the Photon).
+![Wired PIR Sensor](/Images/Wired_PIR_Sensor.png "Wired PIR Sensor")
 
 ### Write and Deploy your Code to use the new sensor
 
@@ -163,7 +174,7 @@ void loop(){
 2) When movement is detected by the PIR sensor the LED will blink once and then stay on. WHen there is no longer movement detected the LED will blink once and then turn off.
 3) Test your board by covering the LED with your hands, waiting a few seconds, then uncovering the sensor.
 
-- Note: It is not constantly checking for movement. So there will be a couple seconds delay
+- Note: It is not constantly checking for movement. So there will be a couple seconds delay.
 
 ## Part 3: Send an event when the PIR state changes
 
